@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="97fef93a-139a-42bc-8788-54468884d2f3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MatrixParallel.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/appl/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/GenericReduce.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/MapReduce.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/reduces/MatrixReduce.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/reduces/MatrixTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/reduces/SumReduce.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/reduces/SumTask.java" afterDir="false" />
+    <list default="true" id="97fef93a-139a-42bc-8788-54468884d2f3" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/MultiMatrixMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/Pair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/appl/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/appl/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/GenericReduce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/GenericReduce.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/MapReduce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/MapReduce.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/reduces/MatrixReduce.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -40,7 +45,9 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "settings.editor.selected.configurable": "preferences.JavaFX"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -51,8 +58,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1660002955513</updated>
-      <workItem from="1660002957112" duration="9936000" />
+      <workItem from="1660002957112" duration="10123000" />
+      <workItem from="1660151269868" duration="3055000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1660014960815</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1660014960815</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -71,5 +87,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
