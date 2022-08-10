@@ -1,20 +1,26 @@
 package appl;
 
+import core.MultiMatrixMap;
+
 import java.io.File;
-import java.util.*;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class Main {
-    public static Map<Integer, Map <Integer, Integer>> getMatrixFile(String path) {
-        Map<Integer, Map <Integer, Integer>> matrix = new LinkedHashMap<>();
-        int i=0,j=0;
+    public static Map<Integer, Map<Integer, Integer>> getMatrixFile(String path) {
+        Map<Integer, Map<Integer, Integer>> matrix = new HashMap<>();
+        int i = 0, j = 0;
         try {
             File arq = new File(path);
             Scanner reader = new Scanner(arq);
             while (reader.hasNextLine()) {
-                String[] data = reader.nextLine().replaceAll("[^\\d]+",";").split(";");
+                String[] data = reader.nextLine().replaceAll("[^\\d]+", ";").split(";");
+                matrix.put(i, new LinkedHashMap<>());
                 for (String d : data) {
                     if (!d.isEmpty()) {
-                        matrix.put(new Pair<>(i,j), Integer.valueOf(d));
+                        matrix.get(i).put(j, Integer.valueOf(d));
                         j++;
                     }
                 }
@@ -30,8 +36,36 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Map<Pair<Integer, Integer>, Integer> matrix1 = getMatrixFile("/home/pcarmo/Documentos/[BCC447] Programação Paralela/TP1/matrizes/m1_500_500.txt");
-        Map<Pair<Integer, Integer>, Integer> matrix2 = getMatrixFile("/home/pcarmo/Documentos/[BCC447] Programação Paralela/TP1/matrizes/m2_500_500.txt");
-        Map<Pair<Integer, Integer>, Integer> matrix_result;
+        Map<Integer, Map<Integer, Integer>> matrix1 = getMatrixFile("/home/pcarmo/Documentos/[BCC447] Programação Paralela/TP1/matrizes/m1_500_500.txt");
+        Map<Integer, Map<Integer, Integer>> matrix2 = getMatrixFile("/home/pcarmo/Documentos/[BCC447] Programação Paralela/TP1/matrizes/m2_500_500.txt");
+        Map<Integer, Map<Integer, Long>> matrix_result;
+        int row1 = 500, col1 = 500, row2 = 500, col2 = 500;
+        long tempo;
+
+        System.out.println("Calculo em Paralelo com reduce:");
+        tempo = System.currentTimeMillis();
+        matrix_result = new MultiMatrixMap(matrix1, row1, col1, matrix2, row2, col2).mapMatrix();
+        tempo = System.currentTimeMillis() - tempo;
+
+        System.out.println("Tempo de execucao: " + tempo + "ms");
+        System.out.println("Resultado da multiplicacao das Matrizes:");
+        matrix_result.forEach((k, r) -> System.out.println(k + ": " + r));
+
+        System.out.println("\nCalculo em com for:");
+        matrix_result.clear();
+        matrix_result = new HashMap<>();
+        tempo = System.currentTimeMillis();
+        for (int i = 0; i < row1; ++i) {
+            matrix_result.put(i, new HashMap<>());
+            for (int j = 0; j < col2; ++j) {
+                matrix_result.get(i).put(j, 0L);
+                for (int k = 0; k < row2; ++k)
+                    matrix_result.get(i).put(j, matrix_result.get(i).get(j) + (long) matrix1.get(i).get(k) * matrix2.get(k).get(j));
+            }
+        }
+        tempo = System.currentTimeMillis() - tempo;
+        System.out.println("Tempo de execucao: " + tempo + "ms");
+        System.out.println("Resultado da multiplicacao das Matrizes:");
+        matrix_result.forEach((k, r) -> System.out.println(k + ": " + r));
     }
 }

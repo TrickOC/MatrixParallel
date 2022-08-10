@@ -4,10 +4,10 @@ import java.util.List;
 
 public class SumTask {
 
-    public Integer doSomething(List<Integer> args) {
-        int result = 0;
+    public Long doSomething(List<Long> args) {
+        long result = 0;
 
-        for (int aux : args)
+        for (long aux : args)
             result += aux;
 
         return result;

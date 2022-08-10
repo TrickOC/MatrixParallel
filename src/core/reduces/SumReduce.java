@@ -5,11 +5,11 @@ import java.util.List;
 
 public class SumReduce {
 
-    public static List<Integer> reduce(List<Integer> args1, List<Integer> args2) {
+    public static List<Long> reduce(List<Long> args1, List<Long> args2) {
         SumTask task = new SumTask();
-        Integer aux1 = task.doSomething(args1);
-        Integer aux2 = task.doSomething(args2);
-        List<Integer> result = new LinkedList<>();
+        Long aux1 = task.doSomething(args1);
+        Long aux2 = task.doSomething(args2);
+        List<Long> result = new LinkedList<>();
         result.add(aux1 + aux2);
         return result;
     }
