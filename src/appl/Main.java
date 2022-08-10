@@ -36,15 +36,14 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Map<Integer, Map<Integer, Integer>> matrix1 = getMatrixFile("/home/pcarmo/Documentos/[BCC447] Programação Paralela/TP1/matrizes/m1_500_500.txt");
-        Map<Integer, Map<Integer, Integer>> matrix2 = getMatrixFile("/home/pcarmo/Documentos/[BCC447] Programação Paralela/TP1/matrizes/m2_500_500.txt");
+        Map<Integer, Map<Integer, Integer>> matrix1 = getMatrixFile("/home/pcarmo/Documentos/[BCC447] Programação Paralela/TP1/matrizes/m1_100_100.txt");
+        Map<Integer, Map<Integer, Integer>> matrix2 = getMatrixFile("/home/pcarmo/Documentos/[BCC447] Programação Paralela/TP1/matrizes/m2_100_100.txt");
         Map<Integer, Map<Integer, Long>> matrix_result;
-        int row1 = 500, col1 = 500, row2 = 500, col2 = 500;
         long tempo;
 
         System.out.println("Calculo em Paralelo com reduce:");
         tempo = System.currentTimeMillis();
-        matrix_result = new MultiMatrixMap(matrix1, row1, col1, matrix2, row2, col2).mapMatrix();
+        matrix_result = new MultiMatrixMap(matrix1, matrix2).mapMatrix();
         tempo = System.currentTimeMillis() - tempo;
 
         System.out.println("Tempo de execucao: " + tempo + "ms");
@@ -55,12 +54,12 @@ public class Main {
         matrix_result.clear();
         matrix_result = new HashMap<>();
         tempo = System.currentTimeMillis();
-        for (int i = 0; i < row1; ++i) {
+        for (int i = 0; i < matrix1.size(); ++i) {
             matrix_result.put(i, new HashMap<>());
-            for (int j = 0; j < col2; ++j) {
+            for (int j = 0; j < matrix2.get(0).size(); ++j) {
                 matrix_result.get(i).put(j, 0L);
-                for (int k = 0; k < row2; ++k)
-                    matrix_result.get(i).put(j, matrix_result.get(i).get(j) + (long) matrix1.get(i).get(k) * matrix2.get(k).get(j));
+                for (int k = 0; k < matrix2.size(); ++k)
+                    matrix_result.get(i).put(j, matrix_result.get(i).get(j) + ((long) matrix1.get(i).get(k) * matrix2.get(k).get(j)));
             }
         }
         tempo = System.currentTimeMillis() - tempo;

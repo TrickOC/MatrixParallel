@@ -10,14 +10,12 @@ public class MapReduce {
     private final List<List<Long>> segments;
     private final int partitions;
     ExecutorService pool;
-    private int used;
 
     public MapReduce() {
         int core = Runtime.getRuntime().availableProcessors();
         partitions = 2 * core;
         segments = new LinkedList<>();
         pool = Executors.newFixedThreadPool(core);
-        used = 0;
     }
 
     public void mapInput(List<Long> input) {
@@ -31,9 +29,6 @@ public class MapReduce {
             else
                 segments.add(input.subList(i, input.size()));
         }
-        // Atualiza o numero de vezes que foi usado o mapReduce;
-        used++;
-        System.out.println("Operation " + used + " of MapReduce.");
     }
 
     public long parallelReduce() {
@@ -43,7 +38,6 @@ public class MapReduce {
 
             while ((result = processSegments()) != null)
                 results.add(result);
-            //System.out.println("results of segments... " + results.size());
 
             try {
                 for (Future<List<Long>> r : results) {
@@ -52,19 +46,17 @@ public class MapReduce {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            //System.out.println("step of segments finished");
             results.clear();
         }
         pool.shutdown();
-        try {
-            long aux = segments.get(0).get(0);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        long aux = segments.get(0).get(0);
         segments.clear();
-
-        System.out.println("Finished");
         return aux;
+    }
+
+    public void shutdown() {
+        segments.clear();
+        System.out.println("Pool shutdown");
     }
 
     private Future<List<Long>> processSegments() {

@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97fef93a-139a-42bc-8788-54468884d2f3" name="Changes" comment="Refactor the code">
+    <list default="true" id="97fef93a-139a-42bc-8788-54468884d2f3" name="Changes" comment="Running code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/appl/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/appl/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/GenericReduce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/GenericReduce.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/MapReduce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/MapReduce.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/MultiMatrixMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/MultiMatrixMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/reduces/MatrixTask.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/reduces/SumReduce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/reduces/SumReduce.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/reduces/SumTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/reduces/SumTask.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +56,8 @@
       <updated>1660002955513</updated>
       <workItem from="1660002957112" duration="10123000" />
       <workItem from="1660151269868" duration="3311000" />
-      <workItem from="1660155288016" duration="4310000" />
+      <workItem from="1660155288016" duration="4334000" />
+      <workItem from="1660173541497" duration="1473000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1660014960815</created>
@@ -76,7 +73,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660154557136</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Running code">
+      <created>1660159613532</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1660159613532</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,7 +101,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Refactor the code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor the code" />
+    <MESSAGE value="Running code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Running code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -106,8 +111,18 @@
           <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/appl/Main.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.util.HashMap$Node" memberName="value" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
