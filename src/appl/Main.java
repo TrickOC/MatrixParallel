@@ -16,7 +16,7 @@ public class Main {
             File arq = new File(path);
             Scanner reader = new Scanner(arq);
             while (reader.hasNextLine()) {
-                String[] data = reader.nextLine().replaceAll("[^\\d]+", ";").split(";");
+                String[] data = reader.nextLine().replaceAll("\\D", ";").split(";");
                 matrix.put(i, new LinkedHashMap<>());
                 for (String d : data) {
                     if (!d.isEmpty()) {
