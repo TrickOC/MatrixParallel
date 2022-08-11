@@ -50,7 +50,7 @@ public class Main {
         System.out.println("Resultado da multiplicacao das Matrizes:");
         matrix_result.forEach((k, r) -> System.out.println(k + ": " + r));
 
-        System.out.println("\nCalculo em com for:");
+        System.out.println("\nCalculo em sigle thread com for:");
         matrix_result.clear();
         matrix_result = new HashMap<>();
         tempo = System.currentTimeMillis();
