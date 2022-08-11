@@ -29,6 +29,8 @@ public class MapReduce {
             else
                 segments.add(input.subList(i, input.size()));
         }
+        if (partitionSize % 2 > 0)
+            segments.add(new LinkedList<>());
     }
 
     public long parallelReduce() {
@@ -40,21 +42,20 @@ public class MapReduce {
                 results.add(result);
 
             try {
-                for (Future<List<Long>> r : results) {
+                for (Future<List<Long>> r : results)
                     segments.add(r.get());
-                }
             } catch (Exception e) {
                 e.printStackTrace();
             }
             results.clear();
         }
-        pool.shutdown();
         long aux = segments.get(0).get(0);
         segments.clear();
         return aux;
     }
 
     public void shutdown() {
+        pool.shutdown();
         segments.clear();
         System.out.println("Pool shutdown");
     }

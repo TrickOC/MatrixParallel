@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="97fef93a-139a-42bc-8788-54468884d2f3" name="Changes" comment="Running code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appl/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/appl/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/MapReduce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/MapReduce.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/MultiMatrixMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/MultiMatrixMap.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +44,15 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="MatrixParallel" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="appl.Main" />
+      <module name="MatrixParallel" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -57,7 +64,7 @@
       <workItem from="1660002957112" duration="10123000" />
       <workItem from="1660151269868" duration="3311000" />
       <workItem from="1660155288016" duration="4334000" />
-      <workItem from="1660173541497" duration="1473000" />
+      <workItem from="1660173541497" duration="3476000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1660014960815</created>
@@ -80,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660159613532</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Running code">
+      <created>1660175166281</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1660175166281</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,11 +125,6 @@
           <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/appl/Main.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
