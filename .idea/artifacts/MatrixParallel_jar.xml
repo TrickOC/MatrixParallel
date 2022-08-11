@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MatrixParallel:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MatrixParallel_jar</output-path>
+    <root id="archive" name="MatrixParallel.jar">
+      <element id="module-output" name="MatrixParallel" />
+    </root>
+  </artifact>
+</component>
