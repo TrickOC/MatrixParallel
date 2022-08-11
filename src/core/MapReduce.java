@@ -29,7 +29,7 @@ public class MapReduce {
             else
                 segments.add(input.subList(i, input.size()));
         }
-        if (partitionSize % 2 > 0)
+        if (segments.size() % 2 > 0)
             segments.add(new LinkedList<>());
     }
 
